@@ -1,47 +1,36 @@
-#include <iostream>
-#include <vector>
-  using namespace std;
-
-template <typename T>
-class fenwick {
-  public:
-  vector<T> fenw;
-  int n;
-
-  // Constructor for initialization of size 
-  fenwick(int _n) : n(_n + 1) {
-    fenw.resize(n);
-  }
-
-  // to modify , add or replace value at index x
-  void modify(int x, T v) {
-    while (x <= n) {
-      fenw[x] += v;
-      x += (x & -x);
+class BIT { // One-based indexing
+    vector<int> bit;
+public:
+    BIT(int size=0) {
+        bit.assign(size + 1, 0);
     }
-  }
-
-  // To get sum of prefix ending at x
-  T get(int x) {
-    T v{};
-    while (x > 0) {
-      v += fenw[x];
-      x -= (x & -x);
+    int getSum(int idx) { // Get sum in range [1..idx]
+        int sum = 0;
+        for (; idx > 0; idx -= idx & (-idx))
+            sum += bit[idx];
+        return sum;
     }
-    return v;
-  }
+    void addValue(int idx, int val) {
+        for (; idx < bit.size(); idx += idx & (-idx))
+            bit[idx] += val;
+    }
 };
-
-
-int main(){
-  vector <int> ar = {1 , 2 , 3 , 4 , 5};
-  fenwick <int> F(5);
-  for(int i = 0 ; i < (int) ar.size() ; ++i){
-    F.modify(i + 1 ,ar[i]);
-  }
-  for(int i = 0 ; i < (int) ar.size() ; ++i){
-    cout << F.get(i + 1) << ' ';
-  }
-  cout << '\n';
-  return 0;
-}
+class NumArray {
+    BIT bit;
+    vector<int> nums;
+public:
+    NumArray(vector<int>& nums) {
+        this->bit = BIT(nums.size());
+        this->nums = nums;
+        for (int i = 0; i < nums.size(); ++i)
+            bit.addValue(i+1, nums[i]);
+    }
+    void update(int index, int val) {
+        int diff = val - nums[index]; // get diff amount of `val` compared to current value
+        bit.addValue(index + 1, diff); // add this `diff` amount at index `index+1` of BIT, plus 1 because in BIT it's 1-based indexing
+        nums[index] = val; // update latest value of `nums[index]`
+    }
+    int sumRange(int left, int right) {
+        return bit.getSum(right+1) - bit.getSum(left);
+    }
+};
