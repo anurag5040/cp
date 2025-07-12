@@ -42,79 +42,65 @@ An asynchronous, Dockerized backend service built with FastAPI, PostgreSQL, Redi
 > All job-related endpoints require a JWT token in the Authorization header:  
 > `Authorization: Bearer <access_token> . Here do not Write Bearer while putting JWT token in the Authorization header`
 
-### 🔐 Auth
+# 🔐 Auth API
 
-#### `POST /register` — Register a new user  
-Request Body:
+## Endpoints
+
+### `POST /register` — Register a new user  
+### `POST /login` — Login to get JWT token  
+
+# 🧮 Jobs
+
+### `POST /jobs/` — Create Job  
+### `GET /jobs/{job_id}/status` — Get Job Status  
+### `GET /jobs/{job_id}/result` — Get Job Result  
+### `GET /jobsList/` — List All Jobs  
+
+# All Request/Response Samples
+
 ```json
+// Register Request
 {
   "username": "yourname",
   "password": "yourpassword"
 }
-POST /login — Login to get JWT token
-Request Body:
 
-json
-Copy
-Edit
+// Login Request
 {
   "username": "yourname",
   "password": "yourpassword"
 }
-Response:
 
-json
-Copy
-Edit
+// Login Response
 {
   "access_token": "<JWT_TOKEN>",
   "token_type": "bearer"
 }
-🧮 Jobs
-POST /jobs/ — Create Job
-Request Body:
 
-json
-Copy
-Edit
+// Create Job Request
 {
   "data": [1, 2, 3],
   "operation": "square_sum"
 }
-Response:
 
-json
-Copy
-Edit
+// Create Job Response
 {
   "job_id": "uuid",
   "status": "PENDING"
 }
-GET /jobs/{job_id}/status — Get Job Status
-Response:
 
-json
-Copy
-Edit
+// Job Status Response
 {
   "status": "IN_PROGRESS"
 }
-GET /jobs/{job_id}/result — Get Job Result
-Response:
 
-json
-Copy
-Edit
+// Job Result Response
 {
   "status": "SUCCESS",
   "result": 14
 }
-GET /jobsList/ — List All Jobs
-Response:
 
-json
-Copy
-Edit
+// Jobs List Response
 {
   "jobs": [
     {
@@ -126,6 +112,7 @@ Edit
     }
   ]
 }
+
 🐳 Running the Project
 Prerequisites
 Docker & Docker Compose installed
