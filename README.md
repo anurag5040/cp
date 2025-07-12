@@ -113,44 +113,7 @@ An asynchronous, Dockerized backend service built with FastAPI, PostgreSQL, Redi
   ]
 }
 
-🐳 Running the Project
-Prerequisites
-Docker & Docker Compose installed
-
-Python 3.10+ (optional for local development)
-
-Start All Services
-bash
-Copy
-Edit
-docker-compose up --build
-Access:
-
-App: http://localhost:8000
-
-Docs: http://localhost:8000/docs
-
-🧪 Running Tests
-bash
-Copy
-Edit
-docker-compose exec api pytest --disable-warnings --cov=app
-Tests include:
-
-Auth flow
-
-Job creation
-
-Status tracking
-
-Result verification
-
-Invalid operation handling
-
-📁 Project Structure
-css
-Copy
-Edit
+// Project Structure
 .
 ├── app/
 │   ├── main.py
@@ -169,25 +132,3 @@ Edit
 ├── docker-compose.yml
 ├── requirements.txt
 └── README.md
-📝 Future Enhancements
- Job expiration & automatic cleanup
-
- Pagination & filtering in /jobsList
-
- Retry/timeout mechanisms
-
- Admin dashboard
-
-📬 Contact
-Built with ❤️ by [Your Name]
-Feel free to connect on GitHub or LinkedIn
-
-yaml
-Copy
-Edit
-
----
-
-✅ After copying the content, create a `README.md` file in your project root folder and paste it there.
-
-Let me know if you’d like a `.txt` version or want it zipped for upload.
