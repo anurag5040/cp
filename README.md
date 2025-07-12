@@ -1,10 +1,10 @@
-# 🧠 Async Job Processing Backend
+# Async Job Processing Backend
 
 An asynchronous, Dockerized backend service built with FastAPI, PostgreSQL, Redis, and Celery that allows users to submit and track jobs (e.g., data processing tasks like `square_sum`, `cube_sum`) in real time.
 
 ---
 
-## 🚀 Features Implemented
+## Features Implemented
 
 - ✅ Job Submission — Submit data processing jobs (`square_sum`, `cube_sum`)
 - ✅ Job Status Polling — Check status: `PENDING`, `IN_PROGRESS`, `SUCCESS`, `FAILED`
@@ -23,7 +23,7 @@ An asynchronous, Dockerized backend service built with FastAPI, PostgreSQL, Redi
 
 ---
 
-## 📦 Tech Stack
+## Tech Stack
 
 - Language: Python 3.10+
 - Web Framework: FastAPI (async)
@@ -37,19 +37,19 @@ An asynchronous, Dockerized backend service built with FastAPI, PostgreSQL, Redi
 
 ---
 
-## 📪 API Endpoints
+## API Endpoints
 
 > All job-related endpoints require a JWT token in the Authorization header:  
 > `Authorization: Bearer <access_token> . Here do not Write Bearer while putting JWT token in the Authorization header`
 
-## 🔐 Auth API
+## Auth API
 
 ## Endpoints
 
 - POST /register — Register a new user  
 - POST /login — Login to get JWT token  
 
-## 🧮 Jobs
+## Jobs
 
 - POST /jobs — Create Job  
 - GET /jobs/{job_id}/status — Get Job Status  
