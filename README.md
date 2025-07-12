@@ -40,7 +40,7 @@ An asynchronous, Dockerized backend service built with FastAPI, PostgreSQL, Redi
 ## 📪 API Endpoints
 
 > All job-related endpoints require a JWT token in the Authorization header:  
-> `Authorization: Bearer <access_token>`
+> `Authorization: Bearer <access_token> . Here do not Write Bearer while putting JWT token in the Authorization header`
 
 ### 🔐 Auth
 
