@@ -15,7 +15,7 @@ An asynchronous, Dockerized backend service built with FastAPI, PostgreSQL, Redi
 - ✅ Job Listing — View all jobs submitted by the authenticated user
 - ✅ Swagger/OpenAPI Docs — Interactive API docs at `http://localhost:8000/docs`
 - ✅ Dockerized Environment — One-command launch with Docker Compose
-- ✅ Unit Tests — Coverage for job creation, status checks, and error handling
+- ✅ Unit Tests — Code coverage is 84% 
 
 > ⚠️ Not Implemented Yet:
 > - Job expiration and cleanup
