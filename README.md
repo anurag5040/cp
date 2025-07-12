@@ -127,6 +127,7 @@ An asynchronous, Dockerized backend service built with FastAPI, PostgreSQL, Redi
 │       ├── deps.py
 │       └── schemas.py
 ├── tests/
+│   ├── test_auth.py
 │   └── test_jobs.py
 ├── Dockerfile
 ├── docker-compose.yml
