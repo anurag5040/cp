@@ -46,15 +46,15 @@ An asynchronous, Dockerized backend service built with FastAPI, PostgreSQL, Redi
 
 ## Endpoints
 
-### `POST /register` — Register a new user  
+### POST /register — Register a new user  
 ### `POST /login` — Login to get JWT token  
 
 # 🧮 Jobs
 
-# `POST /jobs/` — Create Job  
-# `GET /jobs/{job_id}/status` — Get Job Status  
-# `GET /jobs/{job_id}/result` — Get Job Result  
-# `GET /jobsList/` — List All Jobs  
+# POST /jobs — Create Job  
+# GET /jobs/{job_id}/status — Get Job Status  
+# GET /jobs/{job_id}/result — Get Job Result  
+# GET /jobsList/ — List All Jobs  
 
 # All Request/Response Samples
 
