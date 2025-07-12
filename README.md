@@ -42,19 +42,19 @@ An asynchronous, Dockerized backend service built with FastAPI, PostgreSQL, Redi
 > All job-related endpoints require a JWT token in the Authorization header:  
 > `Authorization: Bearer <access_token> . Here do not Write Bearer while putting JWT token in the Authorization header`
 
-# 🔐 Auth API
+## 🔐 Auth API
 
 ## Endpoints
 
-### POST /register — Register a new user  
-### `POST /login` — Login to get JWT token  
+- POST /register — Register a new user  
+- POST /login — Login to get JWT token  
 
-# 🧮 Jobs
+## 🧮 Jobs
 
-# POST /jobs — Create Job  
-# GET /jobs/{job_id}/status — Get Job Status  
-# GET /jobs/{job_id}/result — Get Job Result  
-# GET /jobsList/ — List All Jobs  
+- POST /jobs — Create Job  
+- GET /jobs/{job_id}/status — Get Job Status  
+- GET /jobs/{job_id}/result — Get Job Result  
+- GET /jobsList/ — List All Jobs  
 
 # All Request/Response Samples
 
